@@ -5,6 +5,7 @@ import "dotenv/config";
 import express from "express";
 import connectCloudinary from "./configs/cloudinary.js";
 import connectDB from "./configs/db.js";
+import cartRouter from "./routes/cartRoute.js";
 import productRouter from "./routes/productRoute.js";
 import sellerRouter from "./routes/sellerRoute.js";
 import userRouter from "./routes/userRoute.js";
@@ -28,6 +29,7 @@ const startServer = async () => {
   app.use("/api/user", userRouter);
   app.use("/api/seller", sellerRouter);
   app.use("/api/product", productRouter);
+  app.use("/api/cart", cartRouter);
 
   app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
