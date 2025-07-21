@@ -7,6 +7,7 @@ import connectCloudinary from "./configs/cloudinary.js";
 import connectDB from "./configs/db.js";
 import addressRouter from "./routes/addressRoute.js";
 import cartRouter from "./routes/cartRoute.js";
+import orderRouter from "./routes/orderRoute.js";
 import productRouter from "./routes/productRoute.js";
 import sellerRouter from "./routes/sellerRoute.js";
 import userRouter from "./routes/userRoute.js";
@@ -32,6 +33,7 @@ const startServer = async () => {
   app.use("/api/product", productRouter);
   app.use("/api/cart", cartRouter);
   app.use("/api/address", addressRouter);
+  app.use("/api/order", orderRouter);
 
   app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
